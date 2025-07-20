@@ -1,0 +1,13 @@
+﻿{
+  "header": {
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hi, I'm {{name}}",
+    "subtitle": ".net developer",
+    "contactMe": "Na sozvone",
+    "viewProjects": "View projects"
+  }
+}
