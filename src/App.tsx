@@ -4,7 +4,12 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n.ts";
+import Projects from "./components/Projects.tsx";
+// import About from "./components/About";
+import Skills from "./components/Skills";
+import Experience from "./components/Experience.tsx";
 
+// import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -21,6 +26,11 @@ function App() {
             }
           >
             <Hero id="home" />
+            {/*<About id="about" />*/}
+            <Skills id="skills" />
+            <Experience id="experience" />
+            <Projects id="projects" />
+            {/*<Contact id="contact" />*/}
           </Suspense>
         </main>
 

@@ -2,12 +2,22 @@
   "header": {
     "projects": "Projects",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "skills": "Skills"
   },
   "hero": {
     "title": "Hi, I'm {{name}}",
     "subtitle": ".net developer",
     "contactMe": "Na sozvone",
     "viewProjects": "View projects"
-  }
+  },
+  "experience": {
+    "title": "Work Experience",
+    "spectec": {
+      "role": "Backend Developer",
+      "company": "SpecTec",
+      "period": "2022 - Present",
+      "description": "Developed multiple APIs, optimized queries, increased overall performance."
+    }
+  } 
 }

@@ -1,26 +1,47 @@
-﻿import { useTranslation } from "react-i18next";
+﻿import React from "react";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
-export default function Hero({ id }: { id: string }) {
+interface HeroProps {
+  id: string;
+  name?: string;
+}
+
+const Hero: React.FC<HeroProps> = ({ id, name = "Evgeny Shevelin" }) => {
   const { t } = useTranslation();
 
   return (
-    <section id={id} className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl md:text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
-          {t("hero.title", { name: "Evgeny Shevelin" })}
-        </h1>
-        <h2 className="text-2xl md:text-3xl text-gray-300 mb-6">
-          {t("hero.subtitle")}
-        </h2>
-        <div className="flex justify-center space-x-4">
-          <button className="px-6 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-md">
-            {t("hero.viewProjects")}
+    <section
+      id={id}
+      className="min-h-[20vh] flex items-center justify-center px-4 py-12"
+    >
+      <div className="text-center max-w-2xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-xl sm:text-2xl text-gray-300 mb-4">
+            {t("hero.title", { name })} .NET Developer
+          </h2>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex justify-center gap-3"
+        >
+          <button className="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 rounded-md text-sm">
+            View Projects
           </button>
-          <button className="px-6 py-3 border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 rounded-md">
-            {t("hero.contactMe")}
+          <button className="px-4 py-2 border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 rounded-md text-sm">
+            Contact Me
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
-}
+};
+
+export default React.memo(Hero);
